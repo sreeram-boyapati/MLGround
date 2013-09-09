@@ -11,9 +11,4 @@ for i=1:length(grad)
 derie=(c1-Y).*X(:,i);
 grad(i)=sum(derie)/m;
 endfor;
-%fprintf("Sum: \n");
-%disp((sum((c1-Y).*X(:,1))/m));
-%fprintf("\nGradient\n");
-%disp(size(grad));
-%fprintf("\n");
 end;
