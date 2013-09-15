@@ -24,6 +24,7 @@ print cost_function(initial_theta, X, y)
 # but then error here...   
 print initial_theta.shape
 theta = fmin(cost_function, initial_theta, args=(X, y))
+
 [ 0.4859444   2.8627971  -0.11007741  0.14486006  2.92973392  0.62873922
  -3.53287819 -2.88852886 -0.77104406]
 

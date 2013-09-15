@@ -7,8 +7,7 @@ from scipy import optimize as opt
 import pickle
 import numpy as np
 import math
-
-
+import matplotlib.pyplot as plt;
 
 def num(s):
 	try:
@@ -89,3 +88,16 @@ def CostFunction_Wrapper(Theta_Matrix, Input_Data, Output_Data):
 Theta_Matrix = np.transpose(Theta_Matrix)
 min_theta = opt.fmin(CostFunction_Wrapper, Theta_Matrix, args=(Input_Data, Output_Data))
 print min_theta
+
+
+
+#Plotting Data 
+X1 = np.argwhere(Output_Data == 1)
+X2 = np.argwhere(Output_Data == 0)
+print X1
+print X2
+
+plt.plot(Input_Data[X1, 3], Input_Data[X1, 4], 'r--', Input_Data[X2, 3], Input_Data[X2, 4], '+')
+#plt.plot(Input_Data[X2, 1], Input_Data[X2, 2], '-')
+plt.axis([0.5, 1.6, 0, 1.6])
+plt.show()
